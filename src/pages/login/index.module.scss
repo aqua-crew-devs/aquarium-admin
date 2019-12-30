@@ -1,0 +1,15 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("./login-background.jpg");
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginBox {
+  background: #ffffff;
+  padding: 20px 35px;
+  border-radius: 8px;
+}
