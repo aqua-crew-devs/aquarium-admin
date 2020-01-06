@@ -6,7 +6,6 @@ function useUser() {
   });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   async function login(username: string, password: string) {
-    console.log(username, password);
     try {
       const resp = await fetch("/api/users/login", {
         method: "POST",
