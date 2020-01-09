@@ -13025,6 +13025,11 @@ timers-browserify@^2.0.4:
   dependencies:
     setimmediate "^1.0.4"
 
+timezone-mock@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.npmjs.org/timezone-mock/-/timezone-mock-1.0.8.tgz#1b9f7af13f2bf84b7aa3d3d6e24aa17255b6037d"
+  integrity sha512-7dgx34HJPY8O/c5dbqG+I9S3TVDjrfssXmS8BNqiy8sdYvYDfM7shHpNA6VTDQWcDGyv43bE3El6YuFDQf1X3g==
+
 timsort@^0.3.0:
   version "0.3.0"
   resolved "https://registry.npmjs.org/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
