@@ -1,6 +1,6 @@
 import React from "react";
 import { Channel } from "../../types/channel";
-import { Table, Button } from "antd";
+import { Table, Button, Modal } from "antd";
 import Column from "antd/lib/table/Column";
 import Avatar from "../../components/Avatar";
 import styles from "./ChannelTable.module.scss";
@@ -8,9 +8,21 @@ import moment from "moment";
 
 interface ChannelTableProps {
   channels: Channel[];
+  onDeleteChannel?: (channel: Channel) => void;
 }
 
 function ChannelTable(props: ChannelTableProps) {
+  function handleDeleteChannel(channel: Channel) {
+    Modal.confirm({
+      title: `是否确认删除【${channel.name}】频道？`,
+      content: "删除操作会导致该频道的所有数据永久丢失",
+      onOk() {
+        props.onDeleteChannel && props.onDeleteChannel(channel);
+      },
+      onCancel() {}
+    });
+  }
+
   return (
     <Table dataSource={props.channels}>
       <Column title="ID" key="id" dataIndex="id"></Column>
@@ -46,7 +58,12 @@ function ChannelTable(props: ChannelTableProps) {
               <Button className={styles.button} type="default" icon="search">
                 查看详情
               </Button>
-              <Button className={styles.button} type="danger" icon="delete">
+              <Button
+                className={styles.button}
+                type="danger"
+                icon="delete"
+                onClick={() => handleDeleteChannel(channel)}
+              >
                 删除频道
               </Button>
             </>
