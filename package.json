@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@alifd/next": "^1.19.8",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -11,7 +12,8 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "@types/react-router-dom": "^5.1.3",
-    "@uform/next": "^1.0.0-rc.1",
+    "@uform/next": "^1.0.0-rc.2",
+    "@umijs/hooks": "^1.5.2",
     "antd": "^3.26.5",
     "node-sass": "^4.13.0",
     "react": "^16.12.0",

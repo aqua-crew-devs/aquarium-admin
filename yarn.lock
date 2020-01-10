@@ -2,6 +2,34 @@
 # yarn lockfile v1
 
 
+"@alifd/field@~1.3.3":
+  version "1.3.3"
+  resolved "https://registry.npmjs.org/@alifd/field/-/field-1.3.3.tgz#d1b86ec7b557334cc9869cf900faac7bc327fdc7"
+  integrity sha512-rZXRRmIFIAkr+ED23SnoHTpG9LoHgjOTqz7ioWG3orN77wJoYvG8LmMjsQgMmTspllm8TCRjmmyjQriQCbCIGA==
+  dependencies:
+    "@alifd/validate" "^1.1.3"
+    prop-types "^15.5.8"
+
+"@alifd/next@^1.19.8":
+  version "1.19.8"
+  resolved "https://registry.npmjs.org/@alifd/next/-/next-1.19.8.tgz#a14a854eb6b81e5238124160b9a076f08a85eda3"
+  integrity sha512-76TIGIbrwbAHMVmX5HUWDUzOtr+y/IcAKBw4tz8s04yRNijqEb1m5c9fBnqrw/Aiyx8EPtLYQHB/0Wmziomm4g==
+  dependencies:
+    "@alifd/field" "~1.3.3"
+    "@alifd/validate" "~1.1.4"
+    babel-runtime "^6.26.0"
+    classnames "^2.2.3"
+    hoist-non-react-statics "^2.1.0"
+    prop-types "^15.6.0"
+    react-lifecycles-compat "^3.0.4"
+    react-transition-group "^2.2.1"
+    shallow-element-equals "^1.0.1"
+
+"@alifd/validate@^1.1.3", "@alifd/validate@~1.1.4":
+  version "1.1.5"
+  resolved "https://registry.npmjs.org/@alifd/validate/-/validate-1.1.5.tgz#e44896785051182cb94db7ec2b33a99b4c86943a"
+  integrity sha512-uinc+qLTrgKtGzXIkbit8spHLe17fzxAeXYe6ND5AgqqnhvZ4IAmZEClrE8HhaZ4QfnsaYR9MDx8CaagpQ+Y3A==
+
 "@ant-design/colors@^3.1.0":
   version "3.2.2"
   resolved "https://registry.npmjs.org/@ant-design/colors/-/colors-3.2.2.tgz#5ad43d619e911f3488ebac303d606e66a8423903"
@@ -2082,23 +2110,23 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@uform/core@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.npmjs.org/@uform/core/-/core-1.0.0-rc.1.tgz#7e32a41be299ab3b90f29bce7f82f71af53a9a56"
-  integrity sha512-IpP7kuW83IYXu0CWTZWNpxxglcM5+QEtq74NKpaJZH8jvX17dl6HdwiIiwolt/xalohGGn+X3qcv7gGjXY7cPg==
+"@uform/core@^1.0.0-rc.2":
+  version "1.0.0-rc.2"
+  resolved "https://registry.npmjs.org/@uform/core/-/core-1.0.0-rc.2.tgz#4d789f94d3216f47b571fd414056a01afdd18bb9"
+  integrity sha512-muNssC6DIJkEIkuqpSKTTHCdQbJZx0EU1mkjZWOxK2KMHMNDXf4q98NK/NsEfyPPZy+2VYSOCp4hUIGHf5zGIA==
   dependencies:
-    "@uform/shared" "^1.0.0-rc.1"
-    "@uform/validator" "^1.0.0-rc.1"
+    "@uform/shared" "^1.0.0-rc.2"
+    "@uform/validator" "^1.0.0-rc.2"
     immer "^3.2.0"
 
-"@uform/next@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.npmjs.org/@uform/next/-/next-1.0.0-rc.1.tgz#7475c9e30f19dfd47de327334a7b6f9285ce9eae"
-  integrity sha512-ZbjqfQ+BZ7XdwT/ifOSPvuBDDAtgmDzRAs08LZmlzlpRestBILZFKcm5vexsK0jA+KptjTAIvwBSJnjmFttUgw==
+"@uform/next@^1.0.0-rc.2":
+  version "1.0.0-rc.2"
+  resolved "https://registry.npmjs.org/@uform/next/-/next-1.0.0-rc.2.tgz#377635c82090abc8005fb8d3cceac71b613e13a7"
+  integrity sha512-MUg1ORY7udA/Q+T9d3ebmG8EHA6nHMn2c9oLzxKnSDjwl10I5D6FanFxSbNVZOg7Sa21WoWxSFEBZY9jazxe9g==
   dependencies:
-    "@uform/react-schema-renderer" "^1.0.0-rc.1"
-    "@uform/react-shared-components" "^1.0.0-rc.1"
-    "@uform/shared" "^1.0.0-rc.1"
+    "@uform/react-schema-renderer" "^1.0.0-rc.2"
+    "@uform/react-shared-components" "^1.0.0-rc.2"
+    "@uform/shared" "^1.0.0-rc.2"
     classnames "^2.2.6"
     react-dnd "^10.0.2"
     react-dnd-html5-backend "^10.0.2"
@@ -2107,46 +2135,56 @@
     rxjs "^6.5.1"
     styled-components "^4.1.1"
 
-"@uform/react-schema-renderer@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.npmjs.org/@uform/react-schema-renderer/-/react-schema-renderer-1.0.0-rc.1.tgz#e77c502ed06f386353848e53668ae4840842765c"
-  integrity sha512-2/lDmE4kTLaxvBptpZc6O+/3ASu7ISB3wJAn/9W3E8IXhZt3/44bDSm6Ptq1FJQHT7JalZ4tgLga0swDwN9YjQ==
+"@uform/react-schema-renderer@^1.0.0-rc.2":
+  version "1.0.0-rc.2"
+  resolved "https://registry.npmjs.org/@uform/react-schema-renderer/-/react-schema-renderer-1.0.0-rc.2.tgz#0c9246d22317fbc3d53f29b791f3881b74cb9184"
+  integrity sha512-8mJcZimEkSB6DqAVh4vB8p3ibiR3oxsC79PL7ehk6+t0TK2Sriz8vqLg193OmUnwXwwyaRSvVo3LsOHNig4Yqw==
   dependencies:
-    "@uform/react" "^1.0.0-rc.1"
-    "@uform/shared" "^1.0.0-rc.1"
-    "@uform/validator" "^1.0.0-rc.1"
+    "@uform/react" "^1.0.0-rc.2"
+    "@uform/shared" "^1.0.0-rc.2"
+    "@uform/validator" "^1.0.0-rc.2"
     pascal-case "^2.0.1"
 
-"@uform/react-shared-components@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.npmjs.org/@uform/react-shared-components/-/react-shared-components-1.0.0-rc.1.tgz#1c1680ab98fa63ee6062e8d90f2cca5a4e8eb854"
-  integrity sha512-Qnf5gQOHbjtjHg4sKUxcQom99RHVbaYYrYcxAoTvSb/sgn891WW9vegijCVYbWWdghS9FQESjcUAAlmBub0MYQ==
+"@uform/react-shared-components@^1.0.0-rc.2":
+  version "1.0.0-rc.2"
+  resolved "https://registry.npmjs.org/@uform/react-shared-components/-/react-shared-components-1.0.0-rc.2.tgz#47d022b75416d41cf9a3879ff2746104ca275f18"
+  integrity sha512-kBQOpZZbcnBa4E0hEmPY2YhD2A+WZSCuHOEZwt+1Tw3ZYiBpEgNwLpu8jV8dMs9pdqynG9JDx6ZHint9W61kcw==
   dependencies:
-    "@uform/shared" "^1.0.0-rc.1"
+    "@uform/shared" "^1.0.0-rc.2"
 
-"@uform/react@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.npmjs.org/@uform/react/-/react-1.0.0-rc.1.tgz#51ed6088e5790bfeba31be377c11875faf954bd6"
-  integrity sha512-5hCeRwjrQYBHg7nHd9wtbRRJ2S96qV1Q1jYgzAUSkKDrl6cR20OA16XszJGTYPQVwQj4+Xv2Yie6RnliXQ0I3A==
+"@uform/react@^1.0.0-rc.2":
+  version "1.0.0-rc.2"
+  resolved "https://registry.npmjs.org/@uform/react/-/react-1.0.0-rc.2.tgz#98987814b9c179e186086a091e71a9d8be083016"
+  integrity sha512-PpOe9TxmW8tXiG7LLebB+CpCP6Fn4niDvl8HKAzczv2BE6zLw3wQwnBQfY/euTzmAORbhcMoxXJEDaJWo6j/jQ==
   dependencies:
-    "@uform/core" "^1.0.0-rc.1"
-    "@uform/shared" "^1.0.0-rc.1"
+    "@uform/core" "^1.0.0-rc.2"
+    "@uform/shared" "^1.0.0-rc.2"
 
-"@uform/shared@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.npmjs.org/@uform/shared/-/shared-1.0.0-rc.1.tgz#c436204cb18cdcc07be5e277eee9c78cf331e528"
-  integrity sha512-aDQGJdR3Ssaul/2jGm3KCtsJ6cQAJ2iWhDRgFS0j08hOpa/hWr2Y/MMLJ6i5eS2YIej3JAgoH50grCym3TNWNw==
+"@uform/shared@^1.0.0-rc.2":
+  version "1.0.0-rc.2"
+  resolved "https://registry.npmjs.org/@uform/shared/-/shared-1.0.0-rc.2.tgz#a48395465ae81c60ce691804abe50cc610b97216"
+  integrity sha512-KidaG8dk9Iuf5QIldq7HcTtSbnAJCjKKt503FPLzwqr/K3BdqYndav96n+g8IugW8MyTNB3QJMeLP+XUVjopEg==
   dependencies:
     camel-case "^3.0.0"
-    cool-path "^0.1.19"
+    cool-path "^0.1.23"
     deepmerge "^4.0.0"
 
-"@uform/validator@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.npmjs.org/@uform/validator/-/validator-1.0.0-rc.1.tgz#5941e6b4820f1bd40cd7085d851715d87ac9720b"
-  integrity sha512-skTAKxlEdKtjooblNoFMamqcX4uwc9tJj/gbWSiuPcFvbnsbCojpW1qO5aU3cEdVbA/Ha64iqOHoIUncRPTZXg==
+"@uform/validator@^1.0.0-rc.2":
+  version "1.0.0-rc.2"
+  resolved "https://registry.npmjs.org/@uform/validator/-/validator-1.0.0-rc.2.tgz#10dfc3be8e2fab3feda53b01b6a877cceeccea56"
+  integrity sha512-ShsTI4wqJdzwS8PexFeInnNlntLN1Td8o2UhekeN+WhKPPnnl8vU6K8d/Dzw+xQ/DKTJO8ot4aUGK43czC4sgQ==
   dependencies:
-    "@uform/shared" "^1.0.0-rc.1"
+    "@uform/shared" "^1.0.0-rc.2"
+
+"@umijs/hooks@^1.5.2":
+  version "1.5.2"
+  resolved "https://registry.npmjs.org/@umijs/hooks/-/hooks-1.5.2.tgz#78ec07064a494f3bc79a455d8c114330d0941ff5"
+  integrity sha512-P3ll8wHs3WfPGLISDWWnxXSOdrgUn8zVw+GneraJN5N4L9lD46MiNGJNuSgFj4l7Q/jPiUewho/DWYvqicR1Dg==
+  dependencies:
+    intersection-observer "^0.7.0"
+    lodash.isequal "^4.5.0"
+    resize-observer-polyfill "^1.5.1"
+    screenfull "^5.0.0"
 
 "@webassemblyjs/ast@1.8.5":
   version "1.8.5"
@@ -4143,10 +4181,10 @@ cookie@0.4.0:
   resolved "https://registry.npmjs.org/cookie/-/cookie-0.4.0.tgz#beb437e7022b3b6d49019d088665303ebe9c14ba"
   integrity sha512-+Hp8fLp57wnUSt0tY0tHEXh4voZRDnoIrZPqlo3DPiI4y9lwg/jqx+1Om94/W6ZaPDOUbnjOt/99w66zk+l1Xg==
 
-cool-path@^0.1.19:
-  version "0.1.21"
-  resolved "https://registry.npmjs.org/cool-path/-/cool-path-0.1.21.tgz#98429c70a927d62c6e881e886ba4d57e23bddd16"
-  integrity sha512-AuPUjsjzwfh4pcny35ClsW9UVTJBTVFmiIeWItPK2Pn2sx7NjniXPDZ51v7V0U2ihIkcQvRwPRoo14M2a8s6Lw==
+cool-path@^0.1.23:
+  version "0.1.23"
+  resolved "https://registry.npmjs.org/cool-path/-/cool-path-0.1.23.tgz#b73a29d8063e66502e1a7be57ae78613468022d3"
+  integrity sha512-fO2xpM6gRrT9bJ76hfwytYNIJcZwaMfWR299/3qVYkqBEUxCZhW62aTGKzlryOuwW4OMF/smS2ZiL9oQFKK3RQ==
 
 copy-concurrently@^1.0.0:
   version "1.0.5"
@@ -4897,6 +4935,13 @@ dom-converter@^0.2:
   integrity sha512-gd3ypIPfOMr9h5jIKq8E3sHOTCjeirnl0WK5ZdS1AW0Odt0b1PaWaHdJ4Qk4klv+YB9aJBS7mESXjFoDQPu6DA==
   dependencies:
     utila "~0.4"
+
+dom-helpers@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.npmjs.org/dom-helpers/-/dom-helpers-3.4.0.tgz#e9b369700f959f62ecde5a6babde4bccd9169af8"
+  integrity sha512-LnuPJ+dwqKDIyotW1VzmOZ5TONUN7CwkCR5hrgawTUbkBGYdeoNLZo6nNfGkCrjtE1nXXaj7iMMpDa8/d9WoIA==
+  dependencies:
+    "@babel/runtime" "^7.1.2"
 
 dom-matches@>=1.0.1:
   version "2.0.0"
@@ -6474,7 +6519,7 @@ hmac-drbg@^1.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
-hoist-non-react-statics@^2.3.1:
+hoist-non-react-statics@^2.1.0, hoist-non-react-statics@^2.3.1:
   version "2.5.5"
   resolved "https://registry.npmjs.org/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
   integrity sha512-rqcy4pJo55FTTLWt+bU8ukscqHeE/e9KWvsOW2b/a3afxQZhwkQdT1rPPCJ0rYXdj4vNcasY8zHTH+jF/qStxw==
@@ -6902,6 +6947,11 @@ interpret@^1.0.0, interpret@^1.2.0:
   version "1.2.0"
   resolved "https://registry.npmjs.org/interpret/-/interpret-1.2.0.tgz#d5061a6224be58e8083985f5014d844359576296"
   integrity sha512-mT34yGKMNceBQUoVn7iCDKDntA7SC6gycMAWzGx1z/CMCTV7b2AAtXlo3nRyHZ1FelRkQbQjprHSYGwzLtkVbw==
+
+intersection-observer@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.npmjs.org/intersection-observer/-/intersection-observer-0.7.0.tgz#ee16bee978db53516ead2f0a8154b09b400bbdc9"
+  integrity sha512-Id0Fij0HsB/vKWGeBe9PxeY45ttRiBmhFyyt/geBdDHBYNctMRTE3dC1U3ujzz3lap+hVXlEcVaB56kZP/eEUg==
 
 invariant@^2.2.2, invariant@^2.2.3, invariant@^2.2.4:
   version "2.2.4"
@@ -8188,6 +8238,11 @@ lodash.debounce@^4.0.0, lodash.debounce@^4.0.8:
   version "4.0.8"
   resolved "https://registry.npmjs.org/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
   integrity sha1-gteb/zCmfEAF/9XiUVMArZyk168=
+
+lodash.isequal@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.npmjs.org/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
+  integrity sha1-QVxEePK8wwEgwizhDtMib30+GOA=
 
 lodash.memoize@^4.1.2:
   version "4.1.2"
@@ -11402,6 +11457,16 @@ react-textarea-autosize@^7.1.0:
     "@babel/runtime" "^7.1.2"
     prop-types "^15.6.0"
 
+react-transition-group@^2.2.1:
+  version "2.9.0"
+  resolved "https://registry.npmjs.org/react-transition-group/-/react-transition-group-2.9.0.tgz#df9cdb025796211151a436c69a8f3b97b5b07c8d"
+  integrity sha512-+HzNTCHpeQyl4MJ/bdE0u6XRMe9+XG/+aL4mCxVN4DnPBQ0/5bfHWPDuOZUzYdMj94daZaZdCCc1Dzt9R/xSSg==
+  dependencies:
+    dom-helpers "^3.4.0"
+    loose-envify "^1.4.0"
+    prop-types "^15.6.2"
+    react-lifecycles-compat "^3.0.4"
+
 react@^16.12.0, react@^16.8.3:
   version "16.12.0"
   resolved "https://registry.npmjs.org/react/-/react-16.12.0.tgz#0c0a9c6a142429e3614834d5a778e18aa78a0b83"
@@ -12038,6 +12103,11 @@ schema-utils@^2.0.0, schema-utils@^2.0.1, schema-utils@^2.1.0, schema-utils@^2.2
     ajv "^6.10.2"
     ajv-keywords "^3.4.1"
 
+screenfull@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.npmjs.org/screenfull/-/screenfull-5.0.0.tgz#5c2010c0e84fd4157bf852877698f90b8cbe96f6"
+  integrity sha512-yShzhaIoE9OtOhWVyBBffA6V98CDCoyHTsp8228blmqYy1Z5bddzE/4FPiJKlr8DVR4VBiiUyfPzIQPIYDkeMA==
+
 scss-tokenizer@^0.2.3:
   version "0.2.3"
   resolved "https://registry.npmjs.org/scss-tokenizer/-/scss-tokenizer-0.2.3.tgz#8eb06db9a9723333824d3f5530641149847ce5d1"
@@ -12195,6 +12265,13 @@ shallow-clone@^3.0.0:
   integrity sha512-/6KqX+GVUdqPuPPd2LxDDxzX6CAbjJehAAOKlNpqqUpAqPM6HeL8f+o3a+JsyGjn2lv0WY8UsTgUJjU9Ok55NA==
   dependencies:
     kind-of "^6.0.2"
+
+shallow-element-equals@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/shallow-element-equals/-/shallow-element-equals-1.0.1.tgz#50739b7d94ad7567a134173d3f4422387ed57ce6"
+  integrity sha1-UHObfZStdWehNBc9P0QiOH7VfOY=
+  dependencies:
+    style-equal "^1.0.0"
 
 shallow-equal@^1.0.0, shallow-equal@^1.1.0:
   version "1.2.1"
@@ -12776,6 +12853,11 @@ strip-json-comments@^3.0.1:
   version "3.0.1"
   resolved "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-3.0.1.tgz#85713975a91fb87bf1b305cca77395e40d2a64a7"
   integrity sha512-VTyMAUfdm047mwKl+u79WIdrZxtFtn+nBxHeb844XBQ9uMNTuTHdx2hc5RiAJYqwTj3wc/xe5HLSdJSkJ+WfZw==
+
+style-equal@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/style-equal/-/style-equal-1.0.0.tgz#98a1c5922226bfe13c196e73f1940e91b8e66595"
+  integrity sha1-mKHFkiImv+E8GW5z8ZQOkbjmZZU=
 
 style-loader@1.0.0:
   version "1.0.0"
