@@ -11,6 +11,7 @@ describe("CreateChannelForm", () => {
     expect(getByTestId("is-auto")).toBeInTheDocument();
     expect(getByTestId("youtube-id")).toBeInTheDocument();
     expect(queryByTestId("name")).not.toBeInTheDocument();
+    expect(queryByTestId("thumbnail-url")).not.toBeInTheDocument();
     expect(queryByTestId("description")).not.toBeInTheDocument();
     expect(queryByTestId("created-at")).not.toBeInTheDocument();
   });
@@ -24,6 +25,7 @@ describe("CreateChannelForm", () => {
     expect(getByTestId("youtube-id")).toBeInTheDocument();
     expect(getByTestId("name")).toBeInTheDocument();
     expect(getByTestId("description")).toBeInTheDocument();
+    expect(getByTestId("thumbnail-url")).toBeInTheDocument();
     expect(getByTestId("created-at")).toBeInTheDocument();
   });
 

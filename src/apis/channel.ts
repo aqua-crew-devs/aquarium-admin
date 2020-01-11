@@ -11,6 +11,7 @@ export type CreateChannelRequestOnManual = {
   name: string;
   description: string;
   createdAt: string;
+  thumbnailUrl: string;
 };
 
 export async function createChannel(

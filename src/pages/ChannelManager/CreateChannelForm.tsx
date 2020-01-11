@@ -8,6 +8,7 @@ export type CreateChannelFormGatheredInfo = {
   name?: string;
   description?: string;
   createdAt?: string;
+  thumbnailUrl?: string;
 };
 
 interface CreateChannelFormProps {
@@ -21,11 +22,13 @@ function CreateChannelForm({ onSubmit }: CreateChannelFormProps) {
       wrapperCol={12}
       effects={($, { setFieldState }) => {
         $("onFieldChange", "isAuto").subscribe(isAuto => {
-          ["name", "description", "createdAt"].forEach(field => {
-            setFieldState(field, state => {
-              state.visible = !isAuto.value;
-            });
-          });
+          ["name", "description", "createdAt", "thumbnailUrl"].forEach(
+            field => {
+              setFieldState(field, state => {
+                state.visible = !isAuto.value;
+              });
+            }
+          );
         });
       }}
       onSubmit={channel => {
@@ -66,6 +69,12 @@ function CreateChannelForm({ onSubmit }: CreateChannelFormProps) {
         name="description"
         x-component="textarea"
         x-props={{ "data-testId": "description" }}
+      ></Field>
+      <Field
+        type="string"
+        title="头像URL"
+        name="thumbnailUrl"
+        x-props={{ "data-testId": "thumbnail-url" }}
       ></Field>
       <Field
         type="date"
