@@ -18,7 +18,7 @@ export async function createChannel(
 ): Promise<Error | Success<null>> {
   let resp = null;
   try {
-    resp = await fetch("/api/channels", {
+    resp = await fetch("/api/v1/channels", {
       method: "post",
       headers: {
         "content-type": "application/json"

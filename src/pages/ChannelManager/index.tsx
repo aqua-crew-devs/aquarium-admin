@@ -1,7 +1,10 @@
 import React from "react";
-import { useBoolean } from "@umijs/hooks";
-import { Button, Row, Col, Modal } from "antd";
-import CreateChannelForm from "./CreateChannelForm";
+import { useBoolean, useAsync } from "@umijs/hooks";
+import { Button, Row, Col, Modal, message, Spin } from "antd";
+import CreateChannelForm, {
+  CreateChannelFormGatheredInfo
+} from "./CreateChannelForm";
+import { createChannel } from "../../apis/channel";
 
 function ChannelManager() {
   const {
@@ -10,11 +13,25 @@ function ChannelManager() {
     setFalse: closeCreateChannel
   } = useBoolean(false);
 
+  const { loading, run: initialCreateChannel } = useAsync(createChannel, {
+    manual: true,
+    onSuccess: () => {
+      message.success("频道创建成功~");
+    },
+    onError: (error: Error) => {
+      message.error(error.message);
+    }
+  });
+
   function handleOpenCreateChannel() {
     openCreateChannel();
   }
   function handleCloseCreateChannel() {
     closeCreateChannel();
+  }
+
+  function handleCreateChannel(data: CreateChannelFormGatheredInfo) {
+    initialCreateChannel(data);
   }
 
   return (
@@ -33,7 +50,9 @@ function ChannelManager() {
         visible={isCreateChannelVisible}
         onCancel={handleCloseCreateChannel}
       >
-        <CreateChannelForm></CreateChannelForm>
+        <Spin tip="数据传输中" spinning={loading}>
+          <CreateChannelForm onSubmit={handleCreateChannel}></CreateChannelForm>
+        </Spin>
       </Modal>
     </div>
   );
