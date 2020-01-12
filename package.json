@@ -163,5 +163,5 @@
       "react-app"
     ]
   },
-  "proxy": "http://test.vtb.ayase-lab.com"
+  "proxy": "http://test.admin.vtb.ayase-lab.com"
 }

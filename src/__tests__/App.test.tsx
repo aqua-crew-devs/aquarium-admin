@@ -1,11 +1,11 @@
 import React from "react";
-import useUser from "./hooks/user";
+import useUser from "../hooks/user";
 import { mocked } from "ts-jest";
 import { render, wait } from "@testing-library/react";
-import { App } from "./App";
+import { App } from "../App";
 import { MemoryRouter } from "react-router-dom";
 
-jest.mock("./hooks/user");
+jest.mock("../hooks/user");
 
 const mockedUseUser = mocked(useUser);
 

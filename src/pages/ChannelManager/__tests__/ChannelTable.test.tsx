@@ -1,5 +1,5 @@
 import React from "react";
-import { Channel } from "../../types/channel";
+import { Channel } from "../../../types/channel";
 import timezoneMock from "timezone-mock";
 import {
   render,
@@ -7,7 +7,7 @@ import {
   getByText as getByTextWith,
   wait
 } from "@testing-library/react";
-import ChannelTable from "./ChannelTable";
+import ChannelTable from "../ChannelTable";
 
 const testChannel: Channel = {
   id: "abcde",

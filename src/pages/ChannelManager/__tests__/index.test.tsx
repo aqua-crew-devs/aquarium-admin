@@ -4,7 +4,7 @@ import {
   fireEvent,
   getByText as getByTextGlobal
 } from "@testing-library/react";
-import ChannelManager from ".";
+import ChannelManager from "..";
 
 describe("Channel Manager", () => {
   it("should have a title", () => {

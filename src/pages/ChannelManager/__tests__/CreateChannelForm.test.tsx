@@ -1,6 +1,6 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
-import CreateChannelForm from "./CreateChannelForm";
+import CreateChannelForm from "../CreateChannelForm";
 
 describe("CreateChannelForm", () => {
   it("should only have id field when auto mode", () => {
