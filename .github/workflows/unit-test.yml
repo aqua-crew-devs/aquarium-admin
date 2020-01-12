@@ -1,0 +1,15 @@
+name: Unit test
+
+on: [push]
+env:
+  CI: true
+
+jobs:
+  unittest:
+    runs-on: [ubuntu-latest]
+    steps:
+    - uses: actions/checkout@v1
+    - name: Fetch dependency
+      run:  yarn
+    - name: Unit test
+      run: yarn test
