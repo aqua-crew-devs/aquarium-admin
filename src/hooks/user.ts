@@ -38,11 +38,16 @@ function useUser() {
     setCurrentUser({ username: "" });
   }
 
+  async function validate() {
+    return null;
+  }
+
   return {
     currentUser,
     isLoggedIn,
     login,
-    logout
+    logout,
+    validate
   };
 }
 

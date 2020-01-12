@@ -105,7 +105,8 @@
     "@storybook/addon-links": "^5.2.8",
     "@storybook/addons": "^5.2.8",
     "@storybook/react": "^5.2.8",
-    "timezone-mock": "^1.0.8"
+    "timezone-mock": "^1.0.8",
+    "ts-jest": "^24.3.0"
   },
   "jest": {
     "roots": [
