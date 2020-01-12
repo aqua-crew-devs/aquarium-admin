@@ -1,0 +1,35 @@
+name: Test Deploy
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  build-and-publish:
+    name: Build and Publish Fresh Docker Image
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@master
+      - name: Push to registry
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: ayase252/aquarium-admin
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          snapshot: true
+        id: docker-publisher
+      - name: Save DigitalOcean kubeconfig
+        uses: digitalocean/action-doctl@master
+        env:
+          DIGITALOCEAN_ACCESS_TOKEN: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+        with:
+          args: kubernetes cluster kubeconfig show hina > $GITHUB_WORKSPACE/.kubeconfig
+      - name: Setup kubectl
+        uses: azure/setup-kubectl@v1
+        with:
+          version: v1.16.2
+      - name: Deploy
+        run: |
+          export KUBECONFIG=$KUBECONFIG:$GITHUB_WORKSPACE/.kubeconfig
+          kubectl config use-context do-sgp1-hina
+          kubectl set image -f ./.k8s/test-deployment.yaml aquarium-admin-test=ayase252/aquarium-admin:${{steps.docker-publisher.outputs.snapshot-tag}}

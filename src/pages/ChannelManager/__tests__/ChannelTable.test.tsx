@@ -5,7 +5,8 @@ import {
   render,
   fireEvent,
   getByText as getByTextWith,
-  wait
+  wait,
+  waitForElementToBeRemoved
 } from "@testing-library/react";
 import ChannelTable from "../ChannelTable";
 
@@ -74,7 +75,7 @@ describe("ChannelTable", () => {
     fireEvent.click(getByTextWith(document.body, "Cancel"));
     expect(handleDeleteChannel).not.toHaveBeenCalled();
 
-    await wait();
+    await waitForElementToBeRemoved(() => getByTextWith(document.body, "OK"));
     fireEvent.click(getByText("删除频道"));
     fireEvent.click(getByTextWith(document.body, "OK"));
     expect(handleDeleteChannel).toHaveBeenCalled();
