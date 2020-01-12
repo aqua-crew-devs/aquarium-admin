@@ -1,14 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { validateUser } from "../apis/users";
 
 function useUser() {
   const [currentUser, setCurrentUser] = useState({
     username: ""
   });
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  async function login(username: string, password: string) {
-    console.log(username, password);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+
+  async function validate() {
     try {
-      const resp = await fetch("/api/users/login", {
+      setIsLoggedIn(await validateUser());
+    } catch {
+      setIsLoggedIn(false);
+    }
+  }
+
+  useEffect(() => {
+    validate();
+  }, []);
+
+  async function login(username: string, password: string) {
+    try {
+      // TODO: refactor into api
+      const resp = await fetch("/api/v1/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

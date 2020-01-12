@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateChannelForm should match snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <form
+      class="next-form next-medium"
+      role="grid"
+    >
+      <div
+        class="next-row next-form-item next-left next-medium"
+        dir="ltr"
+        role="row"
+      >
+        <div
+          class="next-col next-col-4 next-form-item-label"
+          dir="ltr"
+          role="gridcell"
+        >
+          <label>
+            自动模式
+          </label>
+        </div>
+        <div
+          class="next-col next-col-12 next-form-item-control"
+          dir="ltr"
+          role="gridcell"
+        >
+          <div
+            aria-checked="true"
+            class="next-switch next-switch-on next-switch-medium"
+            data-testid="is-auto"
+            role="switch"
+            tabindex="0"
+          >
+            <div
+              class="next-switch-children"
+            />
+          </div>
+            
+          <p />
+        </div>
+      </div>
+      <div
+        class="next-row next-form-item next-left next-medium"
+        dir="ltr"
+        role="row"
+      >
+        <div
+          class="next-col next-col-4 next-form-item-label"
+          dir="ltr"
+          role="gridcell"
+        >
+          <label
+            required=""
+          >
+            YouTube ID
+          </label>
+        </div>
+        <div
+          class="next-col next-col-12 next-form-item-control"
+          dir="ltr"
+          role="gridcell"
+        >
+          <span
+            class="next-input next-medium"
+            data-testid="youtube-id"
+          >
+            <input
+              autocomplete="off"
+              height="100%"
+              value=""
+            />
+          </span>
+            
+          <p />
+        </div>
+      </div>
+      <div
+        class="sc-gzVnrw clSPJo"
+      >
+        <div
+          class="button-group"
+        >
+          <div
+            class="next-row"
+            dir="ltr"
+            role="row"
+          >
+            <div
+              class="next-col"
+              dir="ltr"
+              role="gridcell"
+            >
+              <div
+                class="next-col next-col-offset-7 inline"
+                dir="ltr"
+                role="gridcell"
+              >
+                <div
+                  class="inline-view"
+                >
+                  <button
+                    class="next-btn next-medium next-btn-primary"
+                    type="submit"
+                  >
+                    <span>
+                      提交
+                    </span>
+                  </button>
+                  <button
+                    class="next-btn next-medium next-btn-normal"
+                    type="button"
+                  >
+                    <span>
+                      重置
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</DocumentFragment>
+`;

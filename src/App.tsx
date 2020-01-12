@@ -1,26 +1,58 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import "./App.css";
+import Container from "./components/Container";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import ChannelManager from "./pages/ChannelManager";
+import "antd/dist/antd.css";
+import useUser from "./hooks/user";
+import Login from "./pages/login";
 
-const App: React.FC = () => {
+const ProtectedRoute: React.FC<any> = ({ children, ...rest }) => {
+  const { isLoggedIn } = useUser();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Route
+      {...rest}
+      render={() => {
+        return isLoggedIn ? (
+          children
+        ) : (
+          <Redirect to={{ pathname: "/login" }}></Redirect>
+        );
+      }}
+    ></Route>
   );
-}
+};
 
-export default App;
+export const App: React.FC = () => {
+  return (
+    <Switch>
+      <Route path="/login">
+        <Login></Login>
+      </Route>
+      <Container>
+        <ProtectedRoute path="/channel-manager">
+          <ChannelManager></ChannelManager>
+        </ProtectedRoute>
+        <ProtectedRoute path="/">
+          <Dashboard></Dashboard>
+        </ProtectedRoute>
+      </Container>
+    </Switch>
+  );
+};
+
+const AppWithRouter: React.FC = () => {
+  return (
+    <Router>
+      <App></App>
+    </Router>
+  );
+};
+
+export default AppWithRouter;
