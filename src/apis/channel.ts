@@ -1,4 +1,5 @@
 import { Success, Error, createError, createSuccess } from "./response";
+import { Channel } from "../types/channel";
 
 export type CreateChannelRequestOnAuto = {
   mode: "auto";
@@ -45,4 +46,18 @@ export async function createChannel(
   }
 
   return createSuccess(null);
+}
+
+export async function getChannels() {
+  let resp = null;
+  try {
+    resp = await fetch("/api/v1/channels", {
+      method: "get"
+    });
+  } catch (e) {
+    throw createError("网络错误");
+  }
+
+  const data = await resp.json();
+  return data.channels as Channel[];
 }
