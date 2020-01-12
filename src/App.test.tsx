@@ -13,8 +13,7 @@ const DEFAULT_USE_USER: ReturnType<typeof useUser> = {
   isLoggedIn: false,
   currentUser: { username: "" },
   login: jest.fn(),
-  logout: jest.fn(),
-  validate: jest.fn()
+  logout: jest.fn()
 };
 
 describe("app", () => {

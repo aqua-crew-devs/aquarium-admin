@@ -1,13 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { validateUser } from "../apis/users";
 
 function useUser() {
   const [currentUser, setCurrentUser] = useState({
     username: ""
   });
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+
+  async function validate() {
+    try {
+      setIsLoggedIn(await validateUser());
+    } catch {
+      setIsLoggedIn(false);
+    }
+  }
+
+  useEffect(() => {
+    validate();
+  }, []);
+
   async function login(username: string, password: string) {
     try {
-      const resp = await fetch("/api/users/login", {
+      // TODO: refactor into api
+      const resp = await fetch("/api/v1/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -38,16 +53,11 @@ function useUser() {
     setCurrentUser({ username: "" });
   }
 
-  async function validate() {
-    return null;
-  }
-
   return {
     currentUser,
     isLoggedIn,
     login,
-    logout,
-    validate
+    logout
   };
 }
 
