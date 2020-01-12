@@ -4,7 +4,9 @@ import { Button, Row, Col, Modal, message, Spin } from "antd";
 import CreateChannelForm, {
   CreateChannelFormGatheredInfo
 } from "./CreateChannelForm";
-import { createChannel } from "../../apis/channel";
+import { createChannel, getChannels, deleteChannel } from "../../apis/channel";
+import ChannelTable from "./ChannelTable";
+import { Channel } from "../../types/channel";
 
 function ChannelManager() {
   const {
@@ -23,6 +25,22 @@ function ChannelManager() {
     }
   });
 
+  const { data: channels } = useAsync(getChannels, {
+    onError: (error: Error) => {
+      message.error(error.message);
+    }
+  });
+
+  const { run: initialDeleteChannel } = useAsync(deleteChannel, {
+    manual: true,
+    onSuccess: () => {
+      message.success("频道删除成功");
+    },
+    onError: (error: Error) => {
+      message.error(error.message);
+    }
+  });
+
   function handleOpenCreateChannel() {
     openCreateChannel();
   }
@@ -32,6 +50,10 @@ function ChannelManager() {
 
   function handleCreateChannel(data: CreateChannelFormGatheredInfo) {
     initialCreateChannel(data);
+  }
+
+  function handleDeleteChannel(channel: Channel) {
+    initialDeleteChannel(channel.id);
   }
 
   return (
@@ -44,6 +66,10 @@ function ChannelManager() {
           </Button>
         </Col>
       </Row>
+      <ChannelTable
+        channels={channels || []}
+        onDeleteChannel={handleDeleteChannel}
+      ></ChannelTable>
       <Modal
         title="新建一个频道"
         footer={null}

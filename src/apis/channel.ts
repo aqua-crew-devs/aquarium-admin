@@ -61,3 +61,23 @@ export async function getChannels() {
   const data = await resp.json();
   return data.channels as Channel[];
 }
+
+export async function deleteChannel(channelId: string) {
+  let resp = null;
+  try {
+    resp = await fetch(`/api/v1/channels/${channelId}`, {
+      method: "delete"
+    });
+  } catch (e) {
+    throw createError("网络错误");
+  }
+
+  switch (resp.status) {
+    case 403:
+      throw createError("没有权限删除频道");
+    case 404:
+      throw createError("没有该频道");
+  }
+  // success
+  return null;
+}
