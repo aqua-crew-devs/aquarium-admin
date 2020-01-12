@@ -1,6 +1,6 @@
 import React from "react";
 import useUser from "../hooks/user";
-import { mocked } from "ts-jest";
+import { mocked } from "ts-jest/utils";
 import { render, wait } from "@testing-library/react";
 import { App } from "../App";
 import { MemoryRouter } from "react-router-dom";
