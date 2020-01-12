@@ -5,8 +5,17 @@ import {
   getByText as getByTextGlobal
 } from "@testing-library/react";
 import ChannelManager from "..";
+import { getChannels } from "../../../apis/channel";
+import { mocked } from "ts-jest/utils";
+
+jest.mock("../../../apis/channel");
+
+const mockedGetChannels = mocked(getChannels);
 
 describe("Channel Manager", () => {
+  beforeEach(() => {
+    mockedGetChannels.mockResolvedValue([]);
+  });
   it("should have a title", () => {
     const { getByText } = render(<ChannelManager></ChannelManager>);
 
