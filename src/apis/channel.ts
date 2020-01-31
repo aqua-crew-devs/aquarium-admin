@@ -11,13 +11,14 @@ export type CreateChannelRequestOnManual = {
   id: string;
   name: string;
   description: string;
-  createdAt: string;
-  thumbnailUrl: string;
+  published_at: string;
+  thumbnail: string;
 };
 
 export async function createChannel(
   req: CreateChannelRequestOnAuto | CreateChannelRequestOnManual
 ): Promise<Error | Success<null>> {
+  const { mode, ...channel } = req;
   let resp = null;
   try {
     resp = await fetch("/api/v1/channels", {
@@ -25,7 +26,10 @@ export async function createChannel(
       headers: {
         "content-type": "application/json"
       },
-      body: JSON.stringify(req)
+      body: JSON.stringify({
+        mode,
+        channel
+      })
     });
   } catch (e) {
     throw createError("网络错误");
