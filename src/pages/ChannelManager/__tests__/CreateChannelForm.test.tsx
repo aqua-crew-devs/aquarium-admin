@@ -14,6 +14,7 @@ describe("CreateChannelForm", () => {
     expect(queryByTestId("thumbnail-url")).not.toBeInTheDocument();
     expect(queryByTestId("description")).not.toBeInTheDocument();
     expect(queryByTestId("created-at")).not.toBeInTheDocument();
+    expect(queryByTestId("country")).not.toBeInTheDocument();
   });
 
   it("should only have full fields when manual mode", () => {
@@ -27,6 +28,7 @@ describe("CreateChannelForm", () => {
     expect(getByTestId("description")).toBeInTheDocument();
     expect(getByTestId("thumbnail-url")).toBeInTheDocument();
     expect(getByTestId("created-at")).toBeInTheDocument();
+    expect(getByTestId("country")).toBeInTheDocument();
   });
 
   it("should match snapshot", () => {
