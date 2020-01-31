@@ -63,7 +63,7 @@ export async function getChannels() {
   }
 
   const data = await resp.json();
-  return data.channels as Channel[];
+  return data as Channel[];
 }
 
 export async function deleteChannel(channelId: string) {

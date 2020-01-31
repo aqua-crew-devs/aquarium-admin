@@ -4,7 +4,6 @@ import { Table, Button, Modal } from "antd";
 import Column from "antd/lib/table/Column";
 import Avatar from "../../components/Avatar";
 import styles from "./ChannelTable.module.scss";
-import moment from "moment";
 
 interface ChannelTableProps {
   channels: Channel[];
@@ -24,7 +23,7 @@ function ChannelTable(props: ChannelTableProps) {
   }
 
   return (
-    <Table dataSource={props.channels}>
+    <Table dataSource={props.channels} rowKey="id">
       <Column title="ID" key="id" dataIndex="id"></Column>
       <Column
         title="频道"

@@ -22,7 +22,7 @@ function Login() {
         message.error("登录失败：请检查用户名与密码是否匹配");
       }
     }
-  }, []);
+  }, [login]);
 
   return (
     <div className={styles.container}>

@@ -4,7 +4,7 @@ export async function validateUser() {
       method: "post"
     });
 
-    if (resp.status == 200) {
+    if (resp.status === 200) {
       return true;
     } else {
       return false;
