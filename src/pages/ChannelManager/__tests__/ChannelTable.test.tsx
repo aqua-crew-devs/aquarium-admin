@@ -14,9 +14,9 @@ const testChannel: Channel = {
   id: "abcde",
   name: "test channel",
   description: "a channel",
-  customUrl: "abc",
-  createdAt: new Date("1995-12-17T03:24:00"),
-  thumbnailUrl: "https://thumbnailUrl.com"
+  published_at: "2018-08-01",
+  thumbnail: "https://thumbnailUrl.com",
+  country: "JP"
 };
 
 describe("ChannelTable", () => {
@@ -28,9 +28,9 @@ describe("ChannelTable", () => {
         id: "abcde",
         name: "test channel",
         description: "a channel",
-        customUrl: "abc",
-        createdAt: new Date("1995-12-17T03:24:00"),
-        thumbnailUrl: "https://thumbnailUrl.com"
+        published_at: "2018-08-01",
+        thumbnail: "https://thumbnailUrl.com",
+        country: "JP"
       }
     ];
 
@@ -39,7 +39,7 @@ describe("ChannelTable", () => {
     );
 
     expect(getByText("test channel")).toBeInTheDocument();
-    expect(getByText("1995-12-17")).toBeInTheDocument();
+    expect(getByText("2018-08-01")).toBeInTheDocument();
     expect(getByAltText("test channel's thumbnail")).toBeInTheDocument();
     timezoneMock.unregister();
   });

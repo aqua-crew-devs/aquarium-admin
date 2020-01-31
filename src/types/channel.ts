@@ -2,7 +2,7 @@ export type Channel = {
   id: string;
   name: string;
   description: string;
-  customUrl?: string | null;
-  createdAt: Date;
-  thumbnailUrl: string;
+  published_at: string;
+  thumbnail: string;
+  country: string;
 };

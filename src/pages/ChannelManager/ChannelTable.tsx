@@ -28,12 +28,12 @@ function ChannelTable(props: ChannelTableProps) {
       <Column title="ID" key="id" dataIndex="id"></Column>
       <Column
         title="频道"
-        key="thumbnailUrl"
+        key="thumbnail"
         render={(channel: Channel) => {
           return (
             <>
               <Avatar
-                url={channel.thumbnailUrl}
+                url={channel.thumbnail}
                 alt={`${channel.name}'s thumbnail`}
               ></Avatar>
               <span className={styles.name}>{channel.name}</span>
@@ -43,11 +43,8 @@ function ChannelTable(props: ChannelTableProps) {
       ></Column>
       <Column
         title="创建日期"
-        key="createdAt"
-        dataIndex="createdAt"
-        render={(createdAt: Date) => {
-          return moment(createdAt).format("YYYY-MM-DD");
-        }}
+        key="published_at"
+        dataIndex="published_at"
       ></Column>
       <Column
         title="操作"
