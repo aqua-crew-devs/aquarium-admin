@@ -51,7 +51,12 @@ function ChannelTable(props: ChannelTableProps) {
         render={(channel: Channel) => {
           return (
             <>
-              <Button className={styles.button} type="default" icon="search">
+              <Button
+                disabled
+                className={styles.button}
+                type="default"
+                icon="search"
+              >
                 查看详情
               </Button>
               <Button
