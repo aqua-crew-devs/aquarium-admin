@@ -4,11 +4,14 @@ import { Input, Row, Col, Button, message } from "antd";
 import "antd/dist/antd.css";
 import useUser from "../../hooks/user";
 import Password from "antd/lib/input/Password";
+import { useHistory, useLocation } from "react-router-dom";
 
 function Login() {
   const { login } = useUser();
   const usernameInput = useRef<Input>(null);
   const passwordInput = useRef<Password>(null);
+  const history = useHistory();
+  const from = new URLSearchParams(useLocation().search).get("from");
 
   const handleLogin = useCallback(async () => {
     if (usernameInput.current && passwordInput.current) {
@@ -18,8 +21,9 @@ function Login() {
           passwordInput.current.input.value
         );
         message.success("登录成功");
+        history.replace(from ? from : "/");
       } catch {
-        message.error("登录失败：请检查用户名与密码是否匹配");
+        message.error("登录失败：用户名或者密码错误");
       }
     }
   }, [login]);
