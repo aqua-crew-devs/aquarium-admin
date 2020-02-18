@@ -16,7 +16,6 @@ jobs:
         with:
           config-file: "./cypress.json"
           parallel: true
-          record: true
           start: yarn start
           wait-on: "http://localhost:3000"
       - uses: actions/upload-artifact@v1
