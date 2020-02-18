@@ -23,6 +23,7 @@
     "@uform/next": "^1.0.0-rc.2",
     "@umijs/hooks": "^1.5.2",
     "antd": "^3.26.5",
+    "axios": "^0.19.2",
     "babel-eslint": "10.0.3",
     "babel-jest": "^24.9.0",
     "babel-loader": "8.0.6",
@@ -83,7 +84,8 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "test:e2e": "cypress open"
   },
   "eslintConfig": {
     "extends": "react-app"
