@@ -5,7 +5,8 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Redirect
+  Redirect,
+  useLocation
 } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import ChannelManager from "./pages/ChannelManager";
@@ -15,6 +16,7 @@ import Login from "./pages/login";
 
 const ProtectedRoute: React.FC<any> = ({ children, ...rest }) => {
   const { isLoggedIn } = useUser();
+  const targetPath = useLocation().pathname;
   return (
     <Route
       {...rest}
@@ -22,7 +24,9 @@ const ProtectedRoute: React.FC<any> = ({ children, ...rest }) => {
         return isLoggedIn ? (
           children
         ) : (
-          <Redirect to={{ pathname: "/login" }}></Redirect>
+          <Redirect
+            to={{ pathname: "/login", search: `?from=${targetPath}` }}
+          ></Redirect>
         );
       }}
     ></Route>
