@@ -69,6 +69,7 @@
     "resolve-url-loader": "3.1.1",
     "sass-loader": "8.0.0",
     "semver": "6.3.0",
+    "start-server-and-test": "^1.10.8",
     "style-loader": "1.0.0",
     "terser-webpack-plugin": "2.2.1",
     "ts-pnp": "1.1.5",
@@ -85,7 +86,9 @@
     "test": "node scripts/test.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "test:e2e": "cypress open"
+    "test:e2e": "cypress open",
+    "cy:run": "cypress run",
+    "test:e2e-ci": "start-server-and-test start http://localhost:3000 cy:run"
   },
   "eslintConfig": {
     "extends": "react-app"

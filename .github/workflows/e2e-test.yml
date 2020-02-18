@@ -1,0 +1,32 @@
+name: E2E test
+on: [push]
+jobs:
+  e2e-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        containers: [1, 2, 3]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v1
+        with:
+          config-file: "./cypress.json"
+          parallel: true
+          record: true
+          start: yarn start
+          wait-on: "http://localhost:3000"
+      - uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+      # Test run video was always captured, so this action uses "always()" condition
+      - uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: cypress-videos
+          path: cypress/videos
