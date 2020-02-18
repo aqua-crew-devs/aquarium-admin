@@ -2,10 +2,7 @@ name: E2E test
 on: [push]
 jobs:
   e2e-test:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        containers: [1, 2, 3]
+    runs-on: [ubuntu-latest]
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -15,7 +12,6 @@ jobs:
         uses: cypress-io/github-action@v1
         with:
           config-file: "./cypress.json"
-          parallel: true
           start: yarn start
           wait-on: "http://localhost:3000"
       - uses: actions/upload-artifact@v1
